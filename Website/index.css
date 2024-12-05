@@ -1,0 +1,420 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: rejoy;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: rejoy;
+    src: url(/Rejouice-Headline.woff2);
+}
+
+#cursor{
+    position: fixed;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+#cursor-blur{
+    border: none;
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.422);
+    filter: blur(50px);
+}
+
+nav{
+    padding: 0 2vw;
+    /* background-color: aliceblue; */
+    height: 80px;
+    width: 100%;
+    color: white;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    z-index: 100;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#logo{
+    font-weight: 800;
+    font-size: 2vw;
+}
+
+#nav-bottom{
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+#nav-bottom a{
+    color: white;
+    text-decoration: none; 
+    transition: all 0.2s ease;
+}
+
+#nav-bottom a:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    font-weight: 600;
+}
+
+#mainVideo{
+    position: fixed;
+    min-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#page-1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#page-1 h1{
+    font-size: 5vw;
+}
+
+
+
+#page-1 h3{
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+#page-2{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#scroller{
+    margin-top: 30vh;
+    font-size: 6vw;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+.scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+.scroller-in h4{
+    display: inline-block;
+    white-space: nowrap; 
+    -webkit-text-stroke: 1px white;
+    color: transparent; 
+    transition: all 0.5s ease 
+}
+
+.scroller-in h4:hover{
+    color: snow;
+    cursor:default;
+}
+
+
+@keyframes scroll {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+
+.text{
+    font-family: rejoy;
+    height: 70vh;
+    width: 100%;
+    margin-top: 20vh;
+    padding: 1vw 4vw;
+}
+
+.text p{
+    padding: 2vw 1vw ;
+    font-size: 2.5vw;
+    line-height: 3.5vw;
+    text-decoration: underline;
+}
+
+.text-heading{
+    padding: 2vw 0;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-heading h1{
+    font-size: 1.7vw;
+    font-weight: 600;
+}
+
+.text-heading h5{
+    font-size: 1.5vw;
+}
+
+#cards{
+    margin-top: 20vh;
+    min-height: 80vh ;
+    width: 100%;
+}
+
+#cards>h4{
+    text-align: center;
+    font-size: 3vw;
+}
+
+#card-container{
+    margin-top: 10vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+
+
+
+#card1{
+    background: url("/Images/perfume-1.webp");
+    background-size: cover;
+    background-position: center;
+}
+#card2{
+    background: url("/Images/jewellery-1.webp");
+    background-size: cover;
+    background-position: center;
+}
+#card3{
+    background: url("/Images/cosmetic-4.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.card{
+    z-index: 10;
+    position: relative;
+    height: 60vh;
+    width: 25vw;
+    background-color: aliceblue;
+    border-radius: 10px;
+   
+}
+
+.icon i{
+    position: absolute;
+    top: -6%;
+    right: -6%;
+    color: black;
+    font-size: 2.5vw;
+    border: 1px solid black;
+    padding: 3vw;
+    border-radius: 50%;
+}
+
+
+.overlay{
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    background-color:snow;
+    color: black;
+    padding: 2vw;
+    padding-top: 40% ;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.5s ease ;
+
+}
+
+.overlay h4{
+    color: black;
+    font-size: 2.3vw;
+}
+
+.overlay p{
+    margin-top: 1.2vw;
+    color: black;
+    font-size: 1.3vw;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+
+/* Footer */
+
+
+#footer{
+    position: relative;
+    bottom: 0;
+    min-height: 80vh;
+    width: 100%;
+    background-color: #000;
+    color: white;
+}
+
+
+.footer-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#footer h1{
+    font-size: 10vw;
+}
+
+#footer-data{
+    width: 80%;
+    height: 40vh;
+    padding:2vw 4vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#footer-tags{
+    font-size: 2.5vw;
+    font-weight: bolder;
+}
+
+#contact{
+    color: rgba(255, 255, 255, 0.678);
+    width: 25vw;
+    font-size: 1.6vw;
+}
+
+#contact input{
+    padding-top: 3vw;
+    border: none;
+    background: none;
+    font-size: 1.5vw;
+    color: rgba(229, 226, 226, 0.68);
+    border-bottom: 1px solid white;
+}
+
+#footerBottom{
+    width: 100%;
+    height: 10vh;
+    border-top: 1px solid white;
+    /* padding: 1vw 2vw; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#footerBottom a{
+    text-decoration: none;
+    color: white;
+    transition:3s ease-out;
+}
+
+#footerBottom a:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+.goey3{
+    overflow-x: hidden;
+    height: 60vh;
+    width: 60vh;
+    border-radius: 50%;
+    top: -10%;
+    /* bottom: 0; */
+    left: 0;
+    filter: blur(20px);
+    background: linear-gradient(to top right, snow, aliceblue);
+    animation-name: goey-move2;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+/* 
+.goey-kid{
+    height: 50vh;
+    width: 50vh;
+    border-radius: 50%;
+    position: absolute;
+    /* top: 0%; 
+    bottom: 0;
+    left: -10%;
+    filter: blur(20px);
+    background: linear-gradient(to top right, snow, aliceblue);
+    animation-name: goey-move3;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+} */
+
+@keyframes goey-move3 {
+    from{
+        transform: translate(0%, -7%) skew(0) rotate(-20deg);
+    }
+    to{
+        transform: translate(0%, 27%) skew(-30deg);
+    }
+}
+
+@keyframes goey-move2 {
+    from{
+        transform: translate(0%, -27%) skew(0) rotate(30deg);
+    }
+    to{
+        transform: translate(0%, 7%) skew(30deg);
+    }
+}
+
+
